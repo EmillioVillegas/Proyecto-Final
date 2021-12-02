@@ -42,13 +42,10 @@ arduino.close();
 fig = plt.figure()
 ax = plt.axes(xlim=(0, 1), ylim=(-2.5,2.5))
 line, = ax.plot([], [], lw=2)
-line2, = ax.plot([], [], lw=2)
 
-# animation function.  This is called sequentially
 def animate(l):
     line.set_data(tiempo[:l], d_filtro[:l])
-    line2.set_data(tiempo[:l], d_señal[:l])
-    return line, line2,
+    return line,
 
 anim = FuncAnimation(fig, animate, interval=1)
 plt.show()
