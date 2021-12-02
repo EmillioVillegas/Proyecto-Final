@@ -12,14 +12,12 @@ arduino = serial.Serial('COM3',9600,timeout = 2);
 time.sleep = 1;
 t = 0; #Señal Ruidosa
 d_señal = []; #Graficar
-d_señalgraf = [];
 d_filtro = [];
 tiempo = [];
 while (t <= 1):
     señal = np.sin(2*np.pi*5*t) + np.sin(2*np.pi*50*t); #Señal de Prueba
     t = t + 0.001; #Muestras - 1000
     d_señal.append(str(señal)); 
-    d_señalgraf.append(señal);
     tiempo.append(t);
 
 for i in d_señal: 
